@@ -160,7 +160,19 @@ gulp makeWholeProjectStructure
 ```
 3. Поместить файлы нужных шрифтов в: `src/fonts`  
 4. Поместить файлы нужных изображений в: `src/img`  
-5. 
+5. Установить пакеты Node.js:  
+```sh
+#ncu
+npm i
+```
+6. Развернуть ресурсы:  
+```sh
+gulp copyAllSrc2App
+``` 
+7. Запустить проект:  
+```sh
+gulp
+```
 ##### Очистить app
 ```sh
 gulp cleanDirAppTotal

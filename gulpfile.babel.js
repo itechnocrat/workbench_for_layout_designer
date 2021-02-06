@@ -49,7 +49,7 @@ const dirDistJQuery = dirNodeModules + 'jquery/dist/'
 const filesJsJQuery = dirDistJQuery + '*.js'
 const dirDistBootstrap = dirNodeModules + 'bootstrap/dist/js/'
 const filesJsBootstrap = dirDistBootstrap + '*.js'
-const dirDistPoper = dirNodeModules + 'popper.js/dist/umd/'
+const dirDistPoper = dirNodeModules + '@popperjs/core/dist/umd' // const dirDistPoper = dirNodeModules + 'popper.js/dist/umd/'
 const filesJsPopper = dirDistPoper + '*.js'
 const dirSrcPhp = dirSrc + 'php/'
 const filesSrcPhp = dirSrcPhp + '**/*.php'
@@ -416,36 +416,36 @@ gulp.task('copySrcIndex2AppRoot', () => {
 })
 
 /**
- * @description Copy js Jquery from node_modules/jquery/dist/jquery.js to app/lib
- * @param {string} filesJsJQuery node_modules/jquery/dist/jquery.js
+ * @description Copy js Jquery from node_modules/jquery/dist/ to app/lib
+ * @param {string} filesJsJQuery node_modules/jquery/dist/*.js
  */
 gulp.task('copyJquery2AppLib', () => {
   return gulp.src(filesJsJQuery).pipe(gulp.dest(dirAppLib))
 })
 
 /**
- * @description Copy Popper from node_modules/popper.js/dist/umd/* в app/lib
+ * @description Copy Popper from node_modules/@popperjs/core/dist/umd/ в app/lib
  */
 gulp.task('copyPopper2AppLib', () => {
   return gulp.src(filesJsPopper).pipe(gulp.dest(dirAppLib))
 })
 
 /**
- * @description Copy PHP from src/php/** /* to app/php
+ * @description Copy PHP from src/php/ to app/php
  */
 gulp.task('copyScrPhp2AppPhp', () => {
   return gulp.src(filesSrcPhp).pipe(gulp.dest(dirAppPhp))
 })
 
 /**
- * @description Copy Vendor
+ * @description Copy Vendor from src/vendor/ to app/vendor
  */
 gulp.task('copySrcVendor2AppVendor', () => {
   return gulp.src(filesVendor).pipe(gulp.dest(dirAppVendor))
 })
 
 /**
- * @description Copy favicon
+ * @description Copy Favicon from src/favicon/ to app/favicon
  */
 gulp.task('copySrcFavicon2AppFavicon', () => {
   return gulp.src(fileFavicon).pipe(gulp.dest(dirAppFavicon))
