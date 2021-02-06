@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "node",
+        "target": "es2020",
+        "module": "commonJS"
+    },
+    "include": [
+        "gulpfile.babel.js",
+        "gulpfile.config.js"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/node_modules/*",
+        "app",
+        "src",
+        "z"
+    ]
+}
