@@ -116,7 +116,7 @@ const httpdLocal = done => {
  * @description Local Server through proxy
  * @see https://www.browsersync.io/docs/options#page-top
  */
-const httpdProxy = (done) => {
+const httpdProxy = done => {
   browserSync.init({
     ui: false,
     // ui: { port: 8080 },
@@ -133,7 +133,7 @@ const httpdProxy = (done) => {
     // Useful when using client-routers
     // watchOptions: { ignoreInitial: true, ignored: '*.txt' },
     // server: dirApp,
-    proxy: ipAddressWebServer,
+    proxy: config.ipAddressWebServer,
     // proxy: 'localhost',
     // port: 3000,
     // middleware:,
@@ -285,10 +285,7 @@ gulp.task('imageProcessingA', () => {
           imagemin.optipng({ optimizationLevel: 3 }),
           // 0-7 low-high.
           imagemin.svgo({
-            plugins: [
-              { removeViewBox: true },
-              { cleanupIDs: false }
-            ]
+            plugins: [{ removeViewBox: true }, { cleanupIDs: false }]
           })
         ])
       )
@@ -306,17 +303,19 @@ const imagesQuality = 95
  * @description Produce @1x images
  */
 gulp.task('imageProcessing_1x', () => {
-  return gulp
-    .src(filesSrcImg + '.{png,jpg,jpeg,webp,raw}', { allowEmpty: false })
-  // .pipe(newer('app/img/@1x'))
-    .pipe(
-      responsive({
-        '**/*': { width: '50%', quality: imagesQuality }
-      })
-    )
-  // .on('error', function (e) { console.log(e) })
-  // .pipe(rename(function (path) {path.extname = path.extname.replace('jpeg', 'jpg')}))
-    .pipe(gulp.dest(dirAppImg + '/@1x'))
+  return (
+    gulp
+      .src(filesSrcImg + '.{png,jpg,jpeg,webp,raw}', { allowEmpty: false })
+      // .pipe(newer('app/img/@1x'))
+      .pipe(
+        responsive({
+          '**/*': { width: '50%', quality: imagesQuality }
+        })
+      )
+      // .on('error', function (e) { console.log(e) })
+      // .pipe(rename(function (path) {path.extname = path.extname.replace('jpeg', 'jpg')}))
+      .pipe(gulp.dest(dirAppImg + '/@1x'))
+  )
   // .pipe(notify({
   //   message: '\n\n✅  ===> Image processing 1x — completed!\n',
   //   onLast: true
@@ -327,17 +326,19 @@ gulp.task('imageProcessing_1x', () => {
  * @description Produce @2x images
  */
 gulp.task('imageProcessing_2x', () => {
-  return gulp
-    .src(filesSrcImg + '.{png,jpg,jpeg,webp,raw}', { allowEmpty: false })
-  // .pipe(newer('app/img/@2x'))
-    .pipe(
-      responsive({
-        '**/*': { width: '100%', quality: imagesQuality }
-      })
-    )
-  // .on('error', function (e) { console.log(e) })
-  // .pipe(rename(function (path) {path.extname = path.extname.replace('jpeg', 'jpg')}))
-    .pipe(gulp.dest(dirAppImg + '/@2x'))
+  return (
+    gulp
+      .src(filesSrcImg + '.{png,jpg,jpeg,webp,raw}', { allowEmpty: false })
+      // .pipe(newer('app/img/@2x'))
+      .pipe(
+        responsive({
+          '**/*': { width: '100%', quality: imagesQuality }
+        })
+      )
+      // .on('error', function (e) { console.log(e) })
+      // .pipe(rename(function (path) {path.extname = path.extname.replace('jpeg', 'jpg')}))
+      .pipe(gulp.dest(dirAppImg + '/@2x'))
+  )
   // .pipe(notify({
   //     message: '\n\n✅  ===> Image processing 2x — completed!\n',
   //     onLast: true
@@ -349,7 +350,10 @@ gulp.task('imageProcessing_2x', () => {
  * @version 2
  */
 // gulp.task('imageProcessingB', gulp.series('imageProcessing_1x', 'imageProcessing_2x', reload))
-gulp.task('imageProcessingB', gulp.series('imageProcessing_1x', 'imageProcessing_2x'))
+gulp.task(
+  'imageProcessingB',
+  gulp.series('imageProcessing_1x', 'imageProcessing_2x')
+)
 
 /**
  * @description Processing User JS
@@ -450,7 +454,8 @@ gulp.task('copySrcFavicon2AppFavicon', () => {
 /**
  * @description Copy SRC to APP
  */
-gulp.task('copyAllSrc2App',
+gulp.task(
+  'copyAllSrc2App',
   gulp.series(
     'copyBootstrap2AppLib', // test ok
     'copySrcFontsToApp', // test ok
@@ -503,8 +508,8 @@ gulp.task('copyAllSrc2App',
 /**
  * @description Create app structure
  */
-gulp.task('makeAllAppDirs', (done) => {
-  config.DIR_APP_STRUCTURE.forEach((dir) => {
+gulp.task('makeAllAppDirs', done => {
+  config.DIR_APP_STRUCTURE.forEach(dir => {
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir)
       console.log('Created:', dir)
@@ -516,8 +521,8 @@ gulp.task('makeAllAppDirs', (done) => {
 /**
  * @description Create structure project
  */
-gulp.task('makeAllSrcDirs', (done) => {
-  config.DIR_SRC_STRUCTURE.forEach((dir) => {
+gulp.task('makeAllSrcDirs', done => {
+  config.DIR_SRC_STRUCTURE.forEach(dir => {
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir)
       console.log('Created:', dir)
@@ -529,8 +534,8 @@ gulp.task('makeAllSrcDirs', (done) => {
 /**
  * @description Create project structure (z)
  */
-gulp.task('makeProjectStuff', (done) => {
-  config.DIR_PROJECT_STUFF.forEach((dir) => {
+gulp.task('makeProjectStuff', done => {
+  config.DIR_PROJECT_STUFF.forEach(dir => {
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir)
       console.log('Created:', dir)
@@ -542,14 +547,16 @@ gulp.task('makeProjectStuff', (done) => {
 /**
  * @description
  */
-gulp.task('makeWholeProjectStructure',
+gulp.task(
+  'makeWholeProjectStructure',
   gulp.series('makeAllAppDirs', 'makeAllSrcDirs', 'makeProjectStuff')
 )
 
 /**
  * @description Expand All Project and Make all dir and all copy SRC to APP
  */
-gulp.task('expandAllProject',
+gulp.task(
+  'expandAllProject',
   gulp.series(
     // 'makeWholeProjectStructure',
     'makeAllAppDirs',
@@ -580,7 +587,7 @@ gulp.task('expandAllProject',
 gulp.task('cleanDirAppCss', () => {
   return del([dirAppCss + '/*.css', dirAppCss + '/*.*.css', dirAppCss], {
     force: true
-  }).then((paths) => {
+  }).then(paths => {
     console.log('Deleted files and folders:\n', paths.join('\n'))
   })
 })
@@ -590,7 +597,7 @@ gulp.task('cleanDirAppCss', () => {
  */
 gulp.task('cleanDirAppFavicon', () => {
   return del([dirAppFavicon + '*', dirAppFavicon], { force: true }).then(
-    (paths) => {
+    paths => {
       console.log('Deleted files and folders:\n', paths.join('\n'))
     }
   )
@@ -602,7 +609,7 @@ gulp.task('cleanDirAppFavicon', () => {
 gulp.task('cleanDirAppFonts', () => {
   return del([dirAppFonts + '/*.*', dirAppFonts + '/**/*.*', dirAppFonts], {
     force: true
-  }).then((paths) => {
+  }).then(paths => {
     console.log('Deleted files and folders:\n', paths.join('\n'))
   })
 })
@@ -618,7 +625,7 @@ gulp.task('cleanDirAppImg', () => {
       dirAppImg
     ],
     { force: true }
-  ).then((paths) => {
+  ).then(paths => {
     console.log('Deleted files and folders:\n', paths.join('\n'))
   })
 })
@@ -629,7 +636,7 @@ gulp.task('cleanDirAppImg', () => {
 gulp.task('cleanDirAppJs', () => {
   return del([dirAppJs + '/*.js', dirAppJs + '/*.*.js', dirAppJs], {
     force: true
-  }).then((paths) => {
+  }).then(paths => {
     console.log('Deleted files and folders:\n', paths.join('\n'))
   })
 })
@@ -638,11 +645,9 @@ gulp.task('cleanDirAppJs', () => {
  * @description Deleting libs inside the app folder
  */
 gulp.task('cleanDirAppLib', () => {
-  return del([dirAppLib + '/*.*', dirAppLib], { force: true }).then(
-    (paths) => {
-      console.log('Deleted files and folders:\n', paths.join('\n'))
-    }
-  )
+  return del([dirAppLib + '/*.*', dirAppLib], { force: true }).then(paths => {
+    console.log('Deleted files and folders:\n', paths.join('\n'))
+  })
 })
 
 /**
@@ -650,7 +655,7 @@ gulp.task('cleanDirAppLib', () => {
  */
 gulp.task('cleanDirAppPhp', () => {
   return del([dirAppPhp + '/**/*.*', dirAppPhp], { force: true }).then(
-    (paths) => {
+    paths => {
       console.log('Deleted files and folders:\n', paths.join('\n'))
     }
   )
@@ -661,7 +666,7 @@ gulp.task('cleanDirAppPhp', () => {
  */
 gulp.task('cleanDirAppVendor', () => {
   return del([dirAppVendor + '/**/*.*', dirAppVendor], { force: true }).then(
-    (paths) => {
+    paths => {
       console.log('Deleted files and folders:\n', paths.join('\n'))
     }
   )
@@ -672,11 +677,9 @@ gulp.task('cleanDirAppVendor', () => {
  * @version 0
  */
 gulp.task('cleanDirApp', () => {
-  return del([dirApp + '*', dirApp], { force: true }).then(
-    (paths) => {
-      console.log('Deleted files and folders:\n', paths.join('\n'))
-    }
-  )
+  return del([dirApp + '*', dirApp], { force: true }).then(paths => {
+    console.log('Deleted files and folders:\n', paths.join('\n'))
+  })
 })
 
 /**
@@ -709,8 +712,8 @@ gulp.task(
  * @description Deploy - syncFiles to DocumentRoot web-server
  */
 gulp.task('syncFiles', () => {
-  return gulp.src(dirApp + '**')
-    .pipe(rsync({
+  return gulp.src(dirApp + '**').pipe(
+    rsync({
       destination: '/home/t/technocrat/dev_lp_automation.ru/public_html',
       root: dirApp,
       //
@@ -738,7 +741,8 @@ gulp.task('syncFiles', () => {
       // silent: true,
       // links: true,
       command: true
-    }))
+    })
+  )
 })
 
 /**
