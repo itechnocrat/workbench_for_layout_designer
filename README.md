@@ -150,7 +150,17 @@ gulp.task(
 ```
 
 #### Работа
-
+1. Клонировать репозиторий  
+```sh
+gh repo clone itechnocrat/workbench_for_layout_designer
+```
+2. Создать структуру каталогов:  
+```sh
+gulp makeWholeProjectStructure
+```
+3. Поместить файлы нужных шрифтов в: `src/fonts`  
+4. Поместить файлы нужных изображений в: `src/img`  
+5. 
 ##### Очистить app
 ```sh
 gulp cleanDirAppTotal

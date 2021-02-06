@@ -14,12 +14,13 @@
         "cleanTotalDirApp": "",
         "copyAllSrc2App": "gulp copyAllSrc2App",
         "copyBootstrap": "gulp copyBootstrap2AppLib",
-        "copyPopper": "gulp copyPopper2AppLib",
         "copyFonts": "gulp copyFonts",
         "copyIndex": "gulp copyIndexFiles",
         "copyJquery": "gulp copyJquery2AppLib",
         "copyPhp": "gulp copyPhp2AppPhp",
+        "copyPopper": "gulp copyPopper2AppLib",
         "copyVendor": "gulp copyVendor2AppVendor",
+        "deploy": "gulp syncFiles",
         "images": "gulp image_processing_2",
         "makeAllDirs": "gulp make_all_dirs",
         "makeApp": "gulp make_app_dirs",
@@ -27,8 +28,7 @@
         "makeSrc": "gulp make_src_dirs",
         "rmApp": "gulp clean_dirApp_2",
         "test": "standard && node test.js",
-        "userjs": "gulp processingUserJs",
-        "deploy": "gulp syncFiles"
+        "userjs": "gulp processingUserJs"
     },
     "devDependencies": {
         "@babel/cli": "^7.12.13",
