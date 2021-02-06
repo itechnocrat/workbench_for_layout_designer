@@ -588,7 +588,7 @@ gulp.task('cleanDirAppCss', () => {
   return del([dirAppCss + '/*.css', dirAppCss + '/*.*.css', dirAppCss], {
     force: true
   }).then(paths => {
-    console.log('Deleted files and folders:\n', paths.join('\n'))
+    return console.log('Deleted files and folders:\n', paths.join('\n'))
   })
 })
 
@@ -598,7 +598,7 @@ gulp.task('cleanDirAppCss', () => {
 gulp.task('cleanDirAppFavicon', () => {
   return del([dirAppFavicon + '*', dirAppFavicon], { force: true }).then(
     paths => {
-      console.log('Deleted files and folders:\n', paths.join('\n'))
+      return console.log('Deleted files and folders:\n', paths.join('\n'))
     }
   )
 })
@@ -610,7 +610,7 @@ gulp.task('cleanDirAppFonts', () => {
   return del([dirAppFonts + '/*.*', dirAppFonts + '/**/*.*', dirAppFonts], {
     force: true
   }).then(paths => {
-    console.log('Deleted files and folders:\n', paths.join('\n'))
+    return console.log('Deleted files and folders:\n', paths.join('\n'))
   })
 })
 
@@ -626,7 +626,7 @@ gulp.task('cleanDirAppImg', () => {
     ],
     { force: true }
   ).then(paths => {
-    console.log('Deleted files and folders:\n', paths.join('\n'))
+    return console.log('Deleted files and folders:\n', paths.join('\n'))
   })
 })
 
@@ -637,7 +637,7 @@ gulp.task('cleanDirAppJs', () => {
   return del([dirAppJs + '/*.js', dirAppJs + '/*.*.js', dirAppJs], {
     force: true
   }).then(paths => {
-    console.log('Deleted files and folders:\n', paths.join('\n'))
+    return console.log('Deleted files and folders:\n', paths.join('\n'))
   })
 })
 
@@ -646,7 +646,7 @@ gulp.task('cleanDirAppJs', () => {
  */
 gulp.task('cleanDirAppLib', () => {
   return del([dirAppLib + '/*.*', dirAppLib], { force: true }).then(paths => {
-    console.log('Deleted files and folders:\n', paths.join('\n'))
+    return console.log('Deleted files and folders:\n', paths.join('\n'))
   })
 })
 
@@ -656,7 +656,7 @@ gulp.task('cleanDirAppLib', () => {
 gulp.task('cleanDirAppPhp', () => {
   return del([dirAppPhp + '/**/*.*', dirAppPhp], { force: true }).then(
     paths => {
-      console.log('Deleted files and folders:\n', paths.join('\n'))
+      return console.log('Deleted files and folders:\n', paths.join('\n'))
     }
   )
 })
@@ -667,7 +667,7 @@ gulp.task('cleanDirAppPhp', () => {
 gulp.task('cleanDirAppVendor', () => {
   return del([dirAppVendor + '/**/*.*', dirAppVendor], { force: true }).then(
     paths => {
-      console.log('Deleted files and folders:\n', paths.join('\n'))
+      return console.log('Deleted files and folders:\n', paths.join('\n'))
     }
   )
 })
@@ -678,7 +678,7 @@ gulp.task('cleanDirAppVendor', () => {
  */
 gulp.task('cleanDirApp', () => {
   return del([dirApp + '*', dirApp], { force: true }).then(paths => {
-    console.log('Deleted files and folders:\n', paths.join('\n'))
+    return console.log('Deleted files and folders:\n', paths.join('\n'))
   })
 })
 

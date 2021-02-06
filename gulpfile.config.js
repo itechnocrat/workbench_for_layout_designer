@@ -1,5 +1,6 @@
 module.exports = {
   syntaxSass: 'sass',
+  // syntaxSass  may be: 'scss'
   bsOptProxy: 'localhost',
   bsOptOpen: true,
   bsOptInjectChanges: true,
@@ -7,7 +8,7 @@ module.exports = {
   bsOptOnline: false,
   sassOptErrLogToConsole: true,
   sassOptStyleCSS: 'expanded',
-  // Available options → 'compact' or 'compressed' or 'nested' or 'expanded'
+  // sassOptStyleCSS may be: 'compact' or 'compressed' or 'nested' or 'expanded'
   sassOptPrecision: 10,
   ipAddressWebServer: 'violet.timeweb.ru',
 
@@ -35,7 +36,17 @@ module.exports = {
     'src/test',
     'src/vendor'
   ],
-  DIR_APP_STRUCTURE: ['app', 'app/css', 'app/fonts', 'app/favicon', 'app/img', 'app/js', 'app/lib', 'app/php', 'app/vendor'],
+  DIR_APP_STRUCTURE: [
+    'app',
+    'app/css',
+    'app/fonts',
+    'app/favicon',
+    'app/img',
+    'app/js',
+    'app/lib',
+    'app/php',
+    'app/vendor'
+  ],
   DIR_SRC_STRUCTURE: [
     'src',
     'src/css',
@@ -50,7 +61,14 @@ module.exports = {
     'src/scss',
     'src/vendor'
   ],
-  DIR_PROJECT_STUFF: ['z', 'z/backup', 'z/temp', 'z/test', 'z/trash', 'z/resource'],
+  DIR_PROJECT_STUFF: [
+    'z',
+    'z/backup',
+    'z/temp',
+    'z/test',
+    'z/trash',
+    'z/resource'
+  ],
   // Browsers you care about for autoprefixing. Browserlist https://github.com/ai/browserslist
   // The following list is set as per WordPress requirements. Though, Feel free to change.
   BROWSERS_LIST: [
