@@ -1,0 +1,5 @@
+.vscode
+app/**
+node_modules/**
+src/**
+z/**
