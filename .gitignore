@@ -9,3 +9,5 @@ src/lib
 src/sass
 src/scss
 src/vendor
+
+package-lock.json
