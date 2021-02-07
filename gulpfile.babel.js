@@ -202,6 +202,9 @@ const httpdProxy = done => {
 
 /**
  * @description Convert SASS to CSS
+ * @description Если файла header.css не будет, то в task default раскомментировать sass2css и закомментировать sass_to_css_with_css_inclusion
+ * @todo добавить условие проверки src/css/header.css
+ * @todo и в зависимоти от этого включать его в итоговый app/style.css или нет
  */
 gulp.task('sass2css', () => {
   return (
@@ -275,7 +278,7 @@ gulp.task('sass2css', () => {
  */
 gulp.task('imageProcessingA', () => {
   return gulp
-    .src(filesSrcImg)
+    .src(filesSrcImg, { allowEmpty: false })
     .pipe(imageResize({ width: '50%' }))
     .pipe(
       cache(
@@ -301,6 +304,7 @@ const imagesQuality = 95
 
 /**
  * @description Produce @1x images
+ * @todo сделать проверку на наличие файлов (хотя непонятно, надо или нет)
  */
 gulp.task('imageProcessing_1x', () => {
   return (
@@ -324,6 +328,7 @@ gulp.task('imageProcessing_1x', () => {
 
 /**
  * @description Produce @2x images
+ * @todo сделать проверку на наличие файлов (хотя непонятно, надо или нет)
  */
 gulp.task('imageProcessing_2x', () => {
   return (
