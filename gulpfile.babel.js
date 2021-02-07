@@ -114,7 +114,7 @@ const httpdLocal = done => {
 
 /**
  * @description Local Server through proxy
- * @see https://www.browsersync.io/docs/options#page-top
+ * @link https://www.browsersync.io/docs/options#page-top
  */
 const httpdProxy = done => {
   browserSync.init({
