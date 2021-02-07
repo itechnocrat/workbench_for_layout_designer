@@ -554,7 +554,7 @@ gulp.task('makeProjectStuff', done => {
 })
 
 /**
- * @description
+ * @description Создание структуры проекта
  */
 gulp.task(
   'makeWholeProjectStructure',
