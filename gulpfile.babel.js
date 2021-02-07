@@ -201,6 +201,10 @@ const httpdProxy = done => {
 }
 
 /**
+ * *Task sass2css
+ * ! Это просто тестирование Better Comments
+ * ? многое непонятно, но надо разбираться
+ * TODO многое надо еще сделать
  * @description Convert SASS to CSS
  * @description Если файла header.css не будет, то в task default раскомментировать sass2css и закомментировать sass_to_css_with_css_inclusion
  * @todo добавить условие проверки src/css/header.css
