@@ -5,10 +5,10 @@
     "author": "technocrat",
     "keywords": [],
     "license": "ISC",
-    "main": "gulpfile.js",
+    "main": "gulpfile.babel.js",
     "repository": {
         "type": "git",
-        "url": ""
+        "url": "https://github.com/itechnocrat/workbench_for_layout_designer"
     },
     "scripts": {
         "cleanTotalDirApp": "",

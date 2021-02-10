@@ -9,18 +9,18 @@
 ```sh
 gh repo clone itechnocrat/workbench_for_layout_designer
 ```
-2. Создать структуру каталогов:  
-```sh
-gulp makeWholeProjectStructure
-```
-3. Поместить favicon в: `src/favicon`  
-4. Поместить файлы нужных шрифтов в: `src/fonts`  
-5. Поместить файлы нужных изображений в: `src/img`  
-6. Установить пакеты Node.js:  
+2. Установить пакеты Node.js:  
 ```sh
 #ncu
 npm i
 ```
+3. Создать структуру каталогов:  
+```sh
+gulp makeWholeProjectStructure
+```
+4. Поместить favicon в: `src/favicon`  
+5. Поместить файлы нужных шрифтов в: `src/fonts`  
+6. Поместить файлы нужных изображений в: `src/img`  
 7. Развернуть ресурсы:  
 ```sh
 gulp copyAllSrc2App
