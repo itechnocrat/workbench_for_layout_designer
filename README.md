@@ -1,40 +1,63 @@
 # Workbench for layout designer
+
 ## Навеяно этим:
+
 [OptimizedHTML 4: Startup HTML template based on Gulp & Bootstrap 4](https://github.com/agragregra/OptimizedHTML-4/)  
+
 [OptimizedHTML 5: Облегчённый стартер для вёрстки сайтов](https://webdesign-master.ru/blog/tools/2019-07-15-optimizedhtml-5.html)  
+
 [WPGulp](https://github.com/ahmadawais/WPGulp)  
 
 ### Использование
-1. Клонировать репозиторий  
+
+1 Клонировать репозиторий  
+
 ```sh
 gh repo clone itechnocrat/workbench_for_layout_designer
 ```
-2. Установить пакеты Node.js:  
+
+2 Установить пакеты Node.js:  
+
 ```sh
 #ncu
 npm i
 ```
-3. Создать структуру каталогов:  
+
+3 Создать структуру каталогов:  
+
 ```sh
 gulp makeWholeProjectStructure
+
 ```
-4. Поместить favicon в: `src/favicon`  
-5. Поместить файлы нужных шрифтов в: `src/fonts`  
-6. Поместить файлы нужных изображений в: `src/img`  
-7. Развернуть ресурсы:  
+
+4 Поместить favicon в: `src/favicon`  
+
+5 Поместить файлы нужных шрифтов в: `src/fonts`  
+
+6 Поместить файлы нужных изображений в: `src/img`  
+
+7 Развернуть ресурсы:  
+
 ```sh
 gulp copyAllSrc2App
-``` 
-8. Запустить проект:  
+```
+
+8 Запустить проект:  
+
 ```sh
 gulp
 ```
+
 ### Разное
+
 Очистить app  
+
 ```sh
 gulp cleanDirAppTotal
 ```
+
 Очистить каталоги по отдельности  
+
 ```sh
 gulp cleanDirAppCss
 gulp cleanDirAppFavicon
@@ -47,21 +70,28 @@ gulp cleanDirAppVendor
 gulp cleanDirApp
 gulp cleanCache
 ```
+
 Создание структуры app  
+
 ```sh
 gulp makeAllAppDirs
 ```
+
 Копирование всякого из src в app  
+
 ```sh
 gulp copyAllSrc2App
 ```
+
 Запуск  
 
 ```sh
 gulp
 ```
+
 ### Структура каталогов
-```
+
+```sh
 .
 ├── app
 │   ├── css
