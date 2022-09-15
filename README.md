@@ -2,11 +2,9 @@
 
 ## Навеяно этим:
 
-[OptimizedHTML 4: Startup HTML template based on Gulp & Bootstrap 4](https://github.com/agragregra/OptimizedHTML-4/)  
-
-[OptimizedHTML 5: Облегчённый стартер для вёрстки сайтов](https://webdesign-master.ru/blog/tools/2019-07-15-optimizedhtml-5.html)  
-
-[WPGulp](https://github.com/ahmadawais/WPGulp)  
+1. [OptimizedHTML 4: Startup HTML template based on Gulp & Bootstrap 4](https://github.com/agragregra/OptimizedHTML-4/)  
+2. [OptimizedHTML 5: Облегчённый стартер для вёрстки сайтов](https://webdesign-master.ru/blog/tools/2019-07-15-optimizedhtml-5.html)  
+3. [WPGulp](https://github.com/ahmadawais/WPGulp)
 
 ### Использование
 
