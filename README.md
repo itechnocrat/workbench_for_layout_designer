@@ -34,7 +34,6 @@ cd workbench_for_layout_designer
 3 Установить пакеты Node.js:  
 
 ```sh
-#ncu
 npm i
 ```
 
