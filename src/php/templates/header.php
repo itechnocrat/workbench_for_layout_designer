@@ -6,14 +6,10 @@
   <meta name="description" content="Startup HTML template">
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
   <meta name="viewport" content="width=device-width">
-  <!-- <link rel="icon" href="img/favicon.png"> -->
+  <!-- <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon"> -->
   <!-- <meta property="og:image" content="img/@1x/preview.jpg"> -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- <p>The begin!!!</p> -->
-
-
-
-
-

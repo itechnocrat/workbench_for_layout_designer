@@ -1,40 +1,74 @@
 # Workbench for layout designer
+
 ## Навеяно этим:
+
 [OptimizedHTML 4: Startup HTML template based on Gulp & Bootstrap 4](https://github.com/agragregra/OptimizedHTML-4/)  
+
 [OptimizedHTML 5: Облегчённый стартер для вёрстки сайтов](https://webdesign-master.ru/blog/tools/2019-07-15-optimizedhtml-5.html)  
+
 [WPGulp](https://github.com/ahmadawais/WPGulp)  
 
+### Требования
+
+- Nodejs 14.21.3  
+- Gulp-cli
+
 ### Использование
-1. Клонировать репозиторий  
+
+1 Клонировать репозиторий в какой либо каталог  
+
 ```sh
 gh repo clone itechnocrat/workbench_for_layout_designer
+#or
+git clone https://github.com/itechnocrat/workbench_for_layout_designer
 ```
-2. Установить пакеты Node.js:  
+
+2 Перейти в каталог `workbench_for_layout_designer`
+
+```sh
+cd workbench_for_layout_designer
+```
+
+Каталог возможно и переименовать по своему усмотрению
+
+3 Установить пакеты Node.js:  
+
 ```sh
 #ncu
 npm i
 ```
-3. Создать структуру каталогов:  
+
+4 Создать структуру каталогов:  
+
 ```sh
 gulp makeWholeProjectStructure
 ```
-4. Поместить favicon в: `src/favicon`  
-5. Поместить файлы нужных шрифтов в: `src/fonts`  
-6. Поместить файлы нужных изображений в: `src/img`  
-7. Развернуть ресурсы:  
+
+5 Поместить favicon в: `src/favicon`  
+6 Поместить файлы нужных шрифтов в: `src/fonts`  
+7 Поместить файлы нужных изображений в: `src/img`  
+8 Развернуть ресурсы:  
+
 ```sh
 gulp copyAllSrc2App
-``` 
-8. Запустить проект:  
+```  
+
+9 Запустить проект:  
+
 ```sh
 gulp
 ```
+
 ### Разное
-Очистить app  
+
+Очистить каталог app  
+
 ```sh
 gulp cleanDirAppTotal
 ```
+
 Очистить каталоги по отдельности  
+
 ```sh
 gulp cleanDirAppCss
 gulp cleanDirAppFavicon
@@ -47,23 +81,30 @@ gulp cleanDirAppVendor
 gulp cleanDirApp
 gulp cleanCache
 ```
-Создание структуры app  
+
+Создание структуры `app`  
+
 ```sh
 gulp makeAllAppDirs
 ```
-Копирование всякого из src в app  
+
+Копирование всякого из `src` в `app`  
+
 ```sh
 gulp copyAllSrc2App
 ```
+
 Запуск  
 
 ```sh
 gulp
 ```
+
 ### Структура каталогов
-```
+
+<pre>
 .
-├── app
+├── app             Собственно итоговое приложение
 │   ├── css
 │   ├── favicon
 │   ├── fonts
@@ -78,7 +119,7 @@ gulp
 │   ├── fonts       Содержит шрифты, которые будут скопированы в `./app/fonts`
 │   ├── img         Содержит файлы изображений, которые будут скопированы в `./app/img`
 │   ├── index       Содержит все, что должно оказаться в корне DocumentRoot web-сервера (в корне app)
-│   ├── js          Содержит javascript-файлы пользователя, который будет скопирован в `./app/js/custom.js` и в `./app/js/custom.min.js`
+│   ├── js          Содержит javascript-файлы пользователя; будет скопирован в `./app/js/custom.js` и в `./app/js/custom.min.js`
 │   ├── lib         Для каких-то библиотек
 │   ├── php         Содержит файлы с кодом на PHP, будет скопирована в app
 │   ├── sass        файлы в формате sass
@@ -89,5 +130,4 @@ gulp
     ├── temp        Временный каталог, для чего нибудь
     ├── test        Для тестов
     └── trash       Корзина
-
-```
+</pre>
