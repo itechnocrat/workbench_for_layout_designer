@@ -19,7 +19,11 @@
 
 ```sh
 gh repo clone itechnocrat/workbench_for_layout_designer
-#or
+```
+
+или
+
+```sh
 git clone https://github.com/itechnocrat/workbench_for_layout_designer
 ```
 
