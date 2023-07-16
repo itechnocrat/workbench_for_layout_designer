@@ -1,5 +1,9 @@
 # Workbench for layout designer
 
+## TODO
+
+Rename project to `Workbench Layout`
+
 ## Навеяно этим:
 
 [OptimizedHTML 4: Стартовый шаблон для верстки сайтов с Bootstrap 4 на борту](https://webdesign-master.ru/blog/tools/optimizedhtml-4.html)  
@@ -10,7 +14,7 @@
 
 ### Требования
 
-- Nodejs 14.21.3  
+- Nodejs 14.21.3
 - Gulp-cli
 
 ```sh
